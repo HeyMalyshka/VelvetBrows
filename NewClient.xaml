@@ -1,0 +1,100 @@
+﻿<Page x:Class="VelvetBrows.NewClient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VelvetBrows"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NewClient" Height="450" Width="800">
+
+    <Grid Background="#ffff">
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Главная" Click="MenuItemHome_Click"/>
+                <MenuItem Header="Админ" Click="MenuItemAdmin_Click"/>
+                <MenuItem Header="О программе" Click="Programm_Click"/>
+                <MenuItem Header="Помощь" Click="Help_Click"/>
+            </Menu>
+
+            <Grid Grid.IsSharedSizeScope="True">
+                <Grid x:Name="layer0Grid"
+				Panel.ZIndex="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.ColumnSpan="2" Background="#ff4a6d">
+
+                        <TextBlock HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						FontSize="45"
+						Text="Бархатные Бровки" Foreground="#ffff" Height="61" Margin="121,15,271.6,24.8" Width="400" />
+                    </Border>
+                    <Image Source="images/beauty_logo.png" HorizontalAlignment="Left"/>
+
+                    <GroupBox Grid.Row="1"
+				 	Grid.RowSpan="3"
+				 	Margin="10,2,2,2"
+				 	BorderThickness="2"
+				 	Header="Добавление услуги" Grid.ColumnSpan="2">
+                        <StackPanel Margin="5">
+                            <Label Content="Название услуги" FontSize="20"/>
+                            <TextBox x:Name="Title" Margin="175,-35,275.4,0" Height="25" />
+                            <Label Content="Стоимость" FontSize="20"/>
+                            <TextBox x:Name="Cost" Margin="175,-35,275.4,0" Height="25" TextChanged="Cost_TextChanged"/>
+                            <Label Content="Время" FontSize="20"/>
+                            <TextBox x:Name="Time" Margin="175,-35,275.4,0" Height="25" TextChanged="Time_TextChanged"/>
+                            <Label Content="Скидка" FontSize="20"/>
+                            <TextBox x:Name="Discont" Margin="175,-35,275.4,0" Height="25" TextChanged="Discont_TextChanged"/>
+                            <Label Content="Картинка" FontSize="20"/>
+                            <!--<Button x:Name="openImg" Click="openImg_Click" Content="Выбрать картинку"/>-->
+                            
+                            <ComboBox x:Name="Image1" Margin="175,-35,275.4,0" Height="25" SelectionChanged="Image_SelectionChanged" ItemsSource="{Binding}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image x:Name="img" Height="90" Width="90" Source="{Binding Img}" HorizontalAlignment="Left"/>
+                                            <TextBlock x:Name="Image1" Text="{Binding Text}" FontSize="17"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                                <!--<StackPanel Orientation="Horizontal">
+                                    <Image Height="90" Width="90" Source="images/face.png" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="images/face.png" FontSize="17"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                        <Image Height="90" Width="90" Source="images/man.png" HorizontalAlignment="Left"/>
+                                        <TextBlock Text="images/man.png" FontSize="17"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Height="90" Width="90" Source="images/mask.jpeg" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="images/mask.jpeg" FontSize="17"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Height="90" Width="90" Source="images/piling.jpg" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="images/piling.jpg" FontSize="17"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Height="90" Width="90" Source="images/ногти.png" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="images/ногти.png" FontSize="17"/>
+                                </StackPanel>-->
+                            </ComboBox>
+
+                                <Button x:Name="Zapis" Click="Zapis_Click" Content="Записать услугу" Background="#e1e4ff" Foreground="#ffff" FontSize="20" Height="30" Width="316" HorizontalAlignment="Left" Margin="176,5,0,0" />
+                            <Button Click="Back_Click" Content="Назад" Background="#e1e4ff" Foreground="#ffff" FontSize="20" Height="30" Width="316" HorizontalAlignment="Left" Margin="176,15,0,0" />
+
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Page>

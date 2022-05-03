@@ -1,0 +1,28 @@
+﻿<Page x:Class="VelvetBrows.FormAdmin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VelvetBrows"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FormAdmin" Height="450" Width="800">
+
+    <Grid Background="#ffff" Margin="0,0,0,-0.4">
+        <Border Background="#ff4a6d" Margin="0,0,0,357.6">
+
+            <TextBlock HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						FontSize="45"
+						Text="Бархатные Бровки" Foreground="#ffff" Height="61" Margin="121,15,271.6,24.8" Width="401" />
+        </Border>
+        <Image Source="images/beauty_logo.png" Margin="0,0,664,357.6" HorizontalAlignment="Left"/>
+        <TextBlock Text="Форма входа администратора" FontSize="50" HorizontalAlignment="Center" Margin="57,114,38,233" Width="705" />
+        <TextBlock Text="Пароль:" FontSize="40" Margin="159,223,458,167" />
+        <PasswordBox PasswordChar="*" MinHeight="4" x:Name="password" Margin="351,231,151,165" MaxLength="4" PasswordChanged="password_TextChanged" FontSize="30"/>
+        <Button x:Name="Admin" Content="Вход" FontSize="30" Background="#e1e4ff" Foreground="#ffff" Height="40" Width="200" Margin="133,348,467,62" 
+                Click="Admin_Click" IsEnabled="False"/>
+        <Button x:Name="Back" Content="Назад" FontSize="30" Background="#e1e4ff" Foreground="#ffff" Height="40" Margin="418,348,177,62" 
+                Click="ClickBack"/>
+    </Grid>
+</Page>
